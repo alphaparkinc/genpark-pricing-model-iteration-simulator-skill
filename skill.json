@@ -1,0 +1,56 @@
+{
+  "name": "genpark-pricing-model-iteration-simulator-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Side-by-side seat-based, usage-based, and hybrid pricing revenue simulator with elasticity scoring inspired by Metronome pricing iteration.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "pricing-intelligence",
+  "tags": [
+    "pricing-iteration",
+    "revenue-modeling",
+    "usage-based-billing",
+    "seat-based-pricing",
+    "hybrid-pricing"
+  ],
+  "inputs": {
+    "customer_cohort": {
+      "type": "string",
+      "default": "enterprise_ai_companies"
+    },
+    "monthly_active_users": {
+      "type": "integer",
+      "default": 420
+    },
+    "avg_api_calls_per_user": {
+      "type": "integer",
+      "default": 18500
+    },
+    "seat_price_usd": {
+      "type": "number",
+      "default": 299.0
+    },
+    "usage_price_per_1k_calls": {
+      "type": "number",
+      "default": 1.25
+    }
+  },
+  "outputs": {
+    "simulation_id": {
+      "type": "string"
+    },
+    "recommended_model": {
+      "type": "string"
+    },
+    "recommended_model_revenue_usd": {
+      "type": "number"
+    },
+    "revenue_uplift_vs_seat_pct": {
+      "type": "number"
+    },
+    "iteration_confidence_score": {
+      "type": "number"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
